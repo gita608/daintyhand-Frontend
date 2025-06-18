@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+
+@layer base {
+  :root {
+    --background: 40 50% 98%; /* Lighter Cream */
+    --foreground: 220 10% 25%; /* Soft Dark Gray */
+
+    --card: 40 50% 98%;
+    --card-foreground: 220 10% 25%;
+
+    --popover: 40 50% 98%;
+    --popover-foreground: 220 10% 25%;
+
+    --primary: 340 82% 80%; /* Dainty Pink */
+    --primary-foreground: 40 50% 98%; /* Cream */
+
+    --secondary: 200 82% 90%; /* Powder Blue */
+    --secondary-foreground: 220 10% 25%;
+
+    --muted: 210 20% 94%; /* Lighter gray blue */
+    --muted-foreground: 220 10% 45%; /* Medium soft gray */
+
+    --accent: 250 60% 93%; /* Lavender */
+    --accent-foreground: 220 10% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 20% 88%; /* Light gray blue border */
+    --input: 210 20% 88%;
+    --ring: 340 82% 80%; /* Dainty Pink for ring */
+
+    --radius: 0.75rem;
+
+    /* Dainty Palette */
+    --dainty-pink: 340 82% 80%;
+    --dainty-pink-dark: 340 70% 70%;
+    --dainty-blue: 200 82% 90%;
+    --dainty-blue-dark: 200 60% 75%;
+    --dainty-cream: 40 50% 98%;
+    --dainty-gray: 220 10% 25%;
+    --dainty-lavender: 250 60% 93%;
+  }
+
+  .dark {
+    /* Keeping dark mode for now, but with dainty colors */
+    --background: 220 10% 10%;
+    --foreground: 210 20% 96%;
+
+    --card: 220 10% 10%;
+    --card-foreground: 210 20% 96%;
+
+    --popover: 220 10% 10%;
+    --popover-foreground: 210 20% 96%;
+
+    --primary: 340 82% 70%;
+    --primary-foreground: 220 10% 10%;
+
+    --secondary: 200 82% 20%;
+    --secondary-foreground: 210 20% 96%;
+
+    --muted: 220 10% 15%;
+    --muted-foreground: 210 20% 65%;
+
+    --accent: 250 60% 23%;
+    --accent-foreground: 210 20% 96%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 10% 20%;
+    --input: 220 10% 20%;
+    --ring: 340 82% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+  }
+  
+  .craft-card {
+    @apply bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden;
+  }
+}
